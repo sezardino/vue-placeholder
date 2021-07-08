@@ -1,7 +1,18 @@
 <template>
   <my-header />
-  <router-view />
+  <router-view v-if="$route.path === '/'" />
+  <default-layout v-else>
+    <router-view />
+  </default-layout>
 </template>
+
+<script>
+import DefaultLayout from "@/Layouts/Default";
+
+export default {
+  components: { DefaultLayout },
+};
+</script>
 
 <style lang="scss">
 #app {

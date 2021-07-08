@@ -13,19 +13,6 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <router-link to="/" active-class="active" class="nav-link"
-            >Home</router-link
-          >
-          <router-link to="/posts" active-class="active" class="nav-link"
-            >Posts</router-link
-          >
-          <router-link to="/persons" active-class="active" class="nav-link"
-            >Persons</router-link
-          >
-        </div>
-      </div>
     </div>
   </nav>
 </template>

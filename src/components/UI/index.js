@@ -13,6 +13,8 @@ import CreatePostModal from "./CreatePostModal";
 import Col from "./Col";
 import Filters from "./Filters";
 import Select from "./Select";
+import Container from "./Container";
+import Sidebar from "./Sidebar";
 
 const components = [
   Header,
@@ -30,6 +32,8 @@ const components = [
   Col,
   Filters,
   Select,
+  Container,
+  Sidebar,
 ];
 
 export default components;

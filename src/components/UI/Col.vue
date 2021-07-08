@@ -20,13 +20,13 @@ export default {
     classes() {
       return {
         col: true,
-        [`cols-xxl-${this.xxl}`]: this.xxl,
-        [`cols-xl-${this.xl}`]: this.xl,
-        [`cols-lg-${this.lg}`]: this.lg,
-        [`cols-md-${this.md}`]: this.md,
-        [`cols-sm-${this.sm}`]: this.sm,
-        [`cols-xs-${this.xs}`]: this.xs,
-        [`cols-${this.col}`]: this.col,
+        [`col-xxl-${this.xxl}`]: this.xxl,
+        [`col-xl-${this.xl}`]: this.xl,
+        [`col-lg-${this.lg}`]: this.lg,
+        [`col-md-${this.md}`]: this.md,
+        [`col-sm-${this.sm}`]: this.sm,
+        [`col-xs-${this.xs}`]: this.xs,
+        [`col-${this.col}`]: this.col,
       };
     },
   },
