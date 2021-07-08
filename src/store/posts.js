@@ -32,8 +32,8 @@ const posts = {
   actions: {
     async getPosts({ getters, commit }) {
       const { limit, page, totalPages } = getters;
-      const { posts, totalCount } = await api.getPosts({ limit, page });
-      commit("setPosts", posts);
+      const { data, totalCount } = await api.getPosts({ limit, page });
+      commit("setPosts", data);
       if (!totalPages) {
         commit("setTotalPages", totalCount);
       }
