@@ -3,7 +3,7 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <li>
         <router-link
-          to="/posts"
+          to="/home"
           active-class="active"
           class="nav-link link-dark"
         >
@@ -19,21 +19,6 @@
           Persons
         </router-link>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page"> Home </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">Dashboard</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">Orders</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">Products</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark"> Customers</a>
-      </li>
     </ul>
   </div>
 </template>
@@ -44,8 +29,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.sidebar {
-  padding: 10px;
-}
-</style>
+<style lang="scss" scoped></style>
