@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.home {
+  text-align: center;
+}
 img {
   margin-top: 40px;
 }

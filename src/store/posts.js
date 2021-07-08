@@ -5,16 +5,20 @@ const posts = {
     page: 1,
     totalPages: null,
     limit: 10,
+    posts: [],
   },
   getters: {
     page(state) {
       return state.page;
     },
     limit(state) {
-      return state.page;
+      return state.limit;
     },
     totalPages(state) {
-      return state.page;
+      return state.totalPages;
+    },
+    posts(state) {
+      return state.posts;
     },
   },
   mutations: {
@@ -29,10 +33,9 @@ const posts = {
     async getPosts({ getters, commit }) {
       const { limit, page, totalPages } = getters;
       const { posts, totalCount } = await api.getPosts({ limit, page });
-
-      commit("setTotalPages", totalCount);
+      commit("setPosts", posts);
       if (!totalPages) {
-        commit("setPosts", posts);
+        commit("setTotalPages", totalCount);
       }
     },
   },
