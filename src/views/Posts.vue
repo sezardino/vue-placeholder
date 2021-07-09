@@ -24,10 +24,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["posts"]),
+    ...mapGetters("posts", ["posts"]),
   },
   async mounted() {
-    await this.$store.dispatch("getPosts");
+    await this.$store.dispatch("posts/getPosts");
     this.loading = false;
   },
 };

@@ -1,6 +1,7 @@
 import api from "../api";
 
 const posts = {
+  namespaced: true,
   state: {
     page: 1,
     totalPages: null,
