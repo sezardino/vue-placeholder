@@ -20,7 +20,7 @@ class API {
     this.url = new URL("https://jsonplaceholder.typicode.com/");
   }
 
-  async getData(query, params) {
+  async getData(query, params = {}) {
     const url = new URL(query, this.url);
     this._appendParams(url, params);
     const response = await fetch(url);
@@ -38,17 +38,20 @@ class API {
   }
 
   async getPost(id) {
-    const params = this._createParam(PARAMS.ID, id);
-    return await this.getData(QUERY.POST, params);
+    const query = this._createQuery(QUERY.POST, id);
+    const { data } = await this.getData(query);
+    return data;
   }
 
   async getUsers() {
-    return await this.getData(QUERY.USERS);
+    const { data } = await this.getData(QUERY.USERS);
+    return this._addAvatarForUser(data);
   }
 
   async getUser(id) {
-    const params = this._createParam(PARAMS.ID, id);
-    return await this.getData(QUERY.USERS, params);
+    const query = this._createQuery(QUERY.USERS, id);
+    const { data } = await this.getData(query);
+    return this._addAvatarForUser(data);
   }
 
   async getComments(postId) {
@@ -64,17 +67,20 @@ class API {
   }
 
   async getUserTodos(id) {
-    const query = this._createQuery(QUERY.USERS, QUERY.TODOS, id);
-    return await this.getNestedData(query);
+    const query = this._createQuery(QUERY.USERS, id, QUERY.TODOS);
+    const { data } = await this.getNestedData(query);
+    return data;
   }
   async getUserPosts(id) {
-    const query = this._createQuery(QUERY.USERS, QUERY.POST, id);
-    return await this.getNestedData(query);
+    const query = this._createQuery(QUERY.USERS, id, QUERY.POST);
+    const { data } = await this.getNestedData(query);
+    return data;
   }
 
   async getUserAlbums(id) {
-    const query = this._createQuery(QUERY.USERS, QUERY.ALBUMS, id);
-    return await this.getNestedData(query);
+    const query = this._createQuery(QUERY.USERS, id, QUERY.ALBUMS);
+    const { data } = await this.getNestedData(query);
+    return data;
   }
 
   async getAlbumPhotos(id) {
@@ -83,20 +89,34 @@ class API {
   }
 
   async getPostsComments(id) {
-    const query = this._createQuery(QUERY.POST, QUERY.COMMENTS, id);
-    return await this.getNestedData(query);
+    const query = this._createQuery(QUERY.POST, id, QUERY.COMMENTS);
+    const { data } = await this.getNestedData(query);
+    return data;
   }
 
-  _createQuery = (first, second, id) => `${first}/${id}/${second}`;
+  _createQuery = (first = "", id = "", second = "") =>
+    `${first}/${id}/${second}`;
 
   _createParam = (name, value) => ({ name, value });
+
+  _addAvatarForUser(data) {
+    if (data.length) {
+      return data.map((user) => ({
+        ...user,
+        avatarUrl: require(`@/assets/avatars/${user.id}.svg`),
+      }));
+    } else {
+      data.avatarUrl = require(`@/assets/avatars/${data.id}.svg`);
+      return data;
+    }
+  }
 
   _appendParams(url, params) {
     if (params.length) {
       params.forEach((param) =>
         url.searchParams.append(param.name, param.value)
       );
-    } else if (params) {
+    } else if (params?.name) {
       const { name, value } = params;
       url.searchParams.append(name, value);
     }
