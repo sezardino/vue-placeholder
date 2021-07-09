@@ -1,13 +1,9 @@
 <template>
-  <div class="about">
-    <h1>This is an persons page</h1>
-  </div>
+  <my-section title="Persons" class="persons">
+    <h1>This is persons page</h1>
+  </my-section>
 </template>
 
 <script>
-export default {
-  mounted() {
-    this.$store.dispatch("getPosts");
-  },
-};
+export default {};
 </script>

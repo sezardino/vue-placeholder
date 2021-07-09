@@ -1,9 +1,7 @@
 <template>
   <section class="section">
     <h2 class="visually-hidden">{{ title }}</h2>
-    <my-container class="section__container">
-      <slot></slot>
-    </my-container>
+    <slot></slot>
   </section>
 </template>
 

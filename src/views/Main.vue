@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="main">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Vue Placeholder App" />
   </div>
@@ -9,7 +9,7 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "Home",
+  name: "Main",
   components: {
     HelloWorld,
   },
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.main {
   text-align: center;
 }
 img {

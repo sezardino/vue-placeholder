@@ -1,9 +1,11 @@
 <template>
-  <div class="about">
+  <my-section title="Person" class="person">
     <h1>This is an person page</h1>
-  </div>
+  </my-section>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Person",
+};
 </script>

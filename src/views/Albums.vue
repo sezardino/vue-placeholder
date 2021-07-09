@@ -1,7 +1,7 @@
 <template>
-  <div class="albums">
+  <my-section title="Albums" class="albums">
     <h1>This is an albums page</h1>
-  </div>
+  </my-section>
 </template>
 
 <script>
