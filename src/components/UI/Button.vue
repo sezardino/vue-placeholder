@@ -34,6 +34,7 @@ export default {
 <style lang="scss">
 .btn-teal {
   background-color: teal;
+  border: teal;
   color: white;
 
   &:hover,
