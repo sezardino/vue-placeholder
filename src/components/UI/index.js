@@ -15,6 +15,12 @@ import Filters from "./Filters";
 import Select from "./Select";
 import Container from "./Container";
 import Sidebar from "./Sidebar";
+import Comment from "./Comment";
+import CommentsList from "./CommentsList";
+import UserList from "./UserList";
+import User from "./User";
+import UserDataField from "./UserDataField";
+import List from "./List";
 
 const components = [
   Header,
@@ -34,6 +40,12 @@ const components = [
   Select,
   Container,
   Sidebar,
+  Comment,
+  CommentsList,
+  UserList,
+  User,
+  UserDataField,
+  List,
 ];
 
 export default components;
