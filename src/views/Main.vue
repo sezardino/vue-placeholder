@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="Vue logo" src="@/assets/logo.png" />
     <HelloWorld msg="Welcome to Vue Placeholder App" />
   </div>
 </template>
