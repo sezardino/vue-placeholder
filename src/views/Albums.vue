@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an person page</h1>
+  <div class="albums">
+    <h1>This is an albums page</h1>
   </div>
 </template>
 

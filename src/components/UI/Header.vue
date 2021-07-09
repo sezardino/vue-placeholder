@@ -16,7 +16,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link to="/home" active-class="active" class="nav-link">
-            Main
+            Home
           </router-link>
         </div>
       </div>

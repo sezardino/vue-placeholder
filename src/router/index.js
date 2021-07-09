@@ -1,36 +1,54 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import Main from "../views/Main.vue";
 
-const routes = [
+export const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
-    meta: { title: "Vue Placeholder" },
+    name: "Main",
+    component: Main,
+    meta: { title: "Vue Placeholder", inMenu: false },
   },
   {
     path: "/home",
-    name: "Posts",
-    component: () => import("../views/Posts.vue"),
-    meta: { title: "Latest Posts" },
+    name: "Home",
+    component: () => import("../views/Home.vue"),
+    meta: { title: "Home", inMenu: true },
   },
   {
-    path: "/persons",
-    name: "Persons",
-    component: () => import("../views/Persons.vue"),
-    meta: { title: "Users" },
+    path: "/posts",
+    name: "Posts",
+    component: () => import("../views/Posts.vue"),
+    meta: { title: "Latest Posts", inMenu: true },
   },
   {
     path: "/posts/:id",
     name: "Post",
     component: () => import("../views/Post.vue"),
-    meta: { title: "Post" },
+    meta: { title: "Post", inMenu: false },
+  },
+  {
+    path: "/persons",
+    name: "Persons",
+    component: () => import("../views/Persons.vue"),
+    meta: { title: "Users", inMenu: true },
   },
   {
     path: "/persons/:id",
     name: "Person",
     component: () => import("../views/Person.vue"),
-    meta: { title: "User" },
+    meta: { title: "User", inMenu: false },
+  },
+  {
+    path: "/albums",
+    name: "Albums",
+    component: () => import("../views/Albums.vue"),
+    meta: { title: "Albums", inMenu: true },
+  },
+  {
+    path: "/album/:id",
+    name: "Album",
+    component: () => import("../views/Album.vue"),
+    meta: { title: "Album", inMenu: false },
   },
 ];
 
