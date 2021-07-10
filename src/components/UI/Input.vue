@@ -1,5 +1,11 @@
 <template>
-  <input :type="type" :placeholder="label" class="form-control" />
+  <input
+    :type="type"
+    :placeholder="label"
+    class="form-control"
+    :value="value"
+    @input="$emit('update:value', $event.target.value)"
+  />
 </template>
 
 <script>
@@ -13,6 +19,14 @@ export default {
     type: {
       type: String,
       default: "text",
+    },
+    value: {
+      type: String,
+    },
+  },
+  methods: {
+    updateInput(evt) {
+      this.$emit("update:value", evt.target.value);
     },
   },
 };
