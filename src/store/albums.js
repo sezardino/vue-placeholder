@@ -18,13 +18,17 @@ const albums = {
   actions: {
     async getUsersAlbums({ getters, commit }, id) {
       const albums = getters.albums;
-      const neededAlbum = albums.find((user) => (user.id === id));
+      const neededAlbum = albums.find((user) => user.id === id);
       if (neededAlbum) {
         return neededAlbum;
       }
       const data = await api.getUserAlbums(id);
       commit("addAlbums", data);
       return data;
+    },
+
+    async getAlbum(_, id) {
+      return await api.getAlbumPhotos(id);
     },
   },
 };

@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .modal.show {
   display: flex;
   background-color: rgba(black, 0.8);
@@ -52,5 +52,6 @@ export default {
 
 .modal-dialog {
   margin: auto;
+  max-width: initial;
 }
 </style>
