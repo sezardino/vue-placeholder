@@ -43,7 +43,6 @@ const post = {
     async getFullUserInfo({ getters, dispatch, commit }, id) {
       const users = getters.users;
       let neededUser = users.find((user) => user.id === id);
-      console.log(neededUser);
       if (neededUser?.albums) {
         return neededUser;
       }
