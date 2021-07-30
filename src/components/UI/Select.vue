@@ -1,6 +1,11 @@
 <template>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>{{ label }}</option>
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    :value="value"
+    @change="$emit('update:value', $event.target.value)"
+  >
+    <option disabled selected :value="label">{{ label }}</option>
     <option v-for="option in options" :value="option.value" :key="option.value">
       {{ option.label }}
     </option>
@@ -19,6 +24,7 @@ export default {
       type: String,
       default: "Open menu",
     },
+    value: { type: String },
   },
 };
 </script>

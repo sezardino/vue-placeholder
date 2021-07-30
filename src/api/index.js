@@ -84,8 +84,9 @@ class API {
   }
 
   async getAlbumPhotos(id) {
-    const query = this._createQuery(QUERY.ALBUMS, QUERY.PHOTOS, id);
-    return await this.getNestedData(query);
+    const query = this._createQuery(QUERY.ALBUMS, id, QUERY.PHOTOS);
+    const { data } = await this.getNestedData(query);
+    return data;
   }
 
   async getPostsComments(id) {

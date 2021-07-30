@@ -15,8 +15,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <router-link to="/home" active-class="active" class="nav-link">
-            Home
+          <router-link to="/posts" active-class="active" class="nav-link">
+            Posts
           </router-link>
         </div>
       </div>
@@ -29,3 +29,26 @@ export default {
   name: "my-header",
 };
 </script>
+
+<style lang="scss" scoped>
+.nav-link {
+  position: relative;
+  &:before {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: teal;
+
+    transition: 1s width ease;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+}
+</style>

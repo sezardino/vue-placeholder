@@ -9,7 +9,6 @@
         <my-button color="teal" @click="$router.push(`/posts/${data.id}`)">
           Read More...
         </my-button>
-        <my-button color="danger"> Delete </my-button>
       </div>
     </div>
   </div>

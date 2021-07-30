@@ -70,7 +70,6 @@ export default {
         "users/getFullUserInfo",
         this.$route.params.id
       );
-      console.log(this.data);
       this.loading = false;
     },
   },

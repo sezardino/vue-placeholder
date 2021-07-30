@@ -9,12 +9,6 @@ export const routes = [
     meta: { title: "Vue Placeholder", inMenu: false },
   },
   {
-    path: "/home",
-    name: "Home",
-    component: () => import("../views/Home.vue"),
-    meta: { title: "Home", inMenu: true },
-  },
-  {
     path: "/posts",
     name: "Posts",
     component: () => import("../views/Posts.vue"),
@@ -37,12 +31,6 @@ export const routes = [
     name: "Person",
     component: () => import("../views/Person.vue"),
     meta: { title: "User", inMenu: false },
-  },
-  {
-    path: "/albums",
-    name: "Albums",
-    component: () => import("../views/Albums.vue"),
-    meta: { title: "Albums", inMenu: true },
   },
   {
     path: "/album/:id",

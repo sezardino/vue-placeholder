@@ -26,6 +26,10 @@ const albums = {
       commit("addAlbums", data);
       return data;
     },
+
+    async getAlbum(_, id) {
+      return await api.getAlbumPhotos(id);
+    },
   },
 };
 
